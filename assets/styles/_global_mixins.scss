@@ -1,0 +1,230 @@
+@mixin no-clippath-on-small-screen($min-size, $padding) {
+  @media only screen and (max-width: $min-size) {
+    padding: $padding;
+    clip-path: none;
+  }
+}
+
+@mixin header-overlay {
+  &::before {
+    background-color: $primary;
+    border-bottom-left-radius: 25px;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    content: ' ';
+  }
+}
+
+@mixin absolute-overlay($color: $primary, $opacity: 0.2) {
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    opacity: $opacity;
+    z-index: 0;
+    content: ' ';
+    transition: $global-transition;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin gradient-overlay($angle , $color1, $stop1, $color2, $stop2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient($angle, $color1 $stop1, $color2 $stop2);
+}
+
+@mixin gradient-overlay-five-color($angle , $color1, $color2, $color3, $color4, $color5) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient($angle, $color1, $color2, $color3, $color4, $color5);
+}
+
+@mixin background-blur($color: $white, $opacity: 0.10, $blur: 10px) {
+  background-color: rgba($color, $opacity);
+  backdrop-filter: blur($blur);
+}
+
+@mixin slider-buttons-styles {
+  background-color: lighten(rgba($secondary, 0.2), 10);
+  transition: background-color $global-transition;
+
+  &:hover {
+    background-color: lighten(rgba($secondary, 0.8), 10);
+  }
+}
+
+@mixin scrollbar {
+  /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: $gray-1;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: lighten($primary, 20%);
+  }
+}
+
+@mixin default-scrollbar {
+  &::-webkit-scrollbar {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1 !important;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #a5a5a5 !important;
+  }
+}
+
+@mixin image-hover-transition {
+  transition: $global-transition;
+  &:hover {
+    filter: grayscale(0.8);
+    transform: scale(1.05);
+  }
+}
+
+@mixin text-overflow-ellipsis($max-width) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: $max-width;
+  display: -webkit-box;
+}
+
+@mixin line-clamp($line-number) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: $line-number;
+}
+
+@mixin general-border-radius {
+  border-radius: 8px 8px 8px 12px;
+}
+
+@mixin only-mobile-rule {
+  @media screen and (max-width: $grid-lg) {
+    @content
+  }
+}
+
+@mixin only-desktop-rule {
+  @media screen and (min-width: $grid-lg) {
+    @content
+  }
+}
+
+@mixin sm-rule {
+  @media screen and (max-width: $grid-sm) {
+    @content
+  }
+}
+
+@mixin md-rule {
+  @media screen and (max-width: $grid-md) {
+    @content
+  }
+}
+
+@mixin xl-rule {
+  @media screen and (max-width: $grid-xl) {
+    @content
+  }
+}
+
+@mixin xl-min-rule {
+  @media screen and (min-width: $grid-xl) {
+    @content
+  }
+}
+
+@mixin md-min-rule {
+  @media screen and (min-width: $grid-md) {
+    @content
+  }
+}
+
+@mixin base-border {
+  border: 2px solid $gray-1;
+}
+
+@mixin sa-card-line($top: true, $bottom: false) {
+  background-color: $secondary;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  @if $top {
+    top: 0;
+    border-radius: 0 0 20px 20px;
+  }
+
+  @if $bottom {
+    bottom: 0;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+@mixin custom-border($type, $position: right, $custom-gradiant: false) {
+  @if ($type == side) {
+    background-image: linear-gradient(to right, $gray-1 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: top;
+    background-size: 18px 2px;
+    background-repeat: repeat-x;
+    position: absolute;
+  } @else {
+    background-image: linear-gradient(to bottom, $gray-1 50%, rgba(255, 255, 255, 0) 0%);
+    background-size: 2px 15px;
+    background-repeat: repeat-y;
+    position: absolute;
+    background-position: $position;
+  }
+  @if ($custom-gradiant) {
+    background-image: $custom-gradiant;
+  }
+}

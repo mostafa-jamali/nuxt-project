@@ -1,0 +1,66 @@
+@import 'global_mixins';
+
+// colors
+$primary: #0B032D;
+$verified: #1B0773;
+$discount-color: #1A0DAB;
+$success: #0EAD69;
+$secondary: #FCBF17;
+$secondary-darker: #DFA400;
+$middle-pass: #EC850F;
+$danger: #D91E36;
+
+// Grayscales
+$white: #FFF;
+$gray-1: #F2F2F2;
+$gray-2: #DBDBDB;
+$gray-3: #99999C;
+$gray-4: #828282;
+$gray-5: #4A4A4A;
+$black: #000;
+
+// spacers
+$spacer: 1rem !default;
+
+// font-sizes
+$font-10: 0.7rem;
+$font-12: 0.85rem;
+$font-14: 1rem;
+$font-16: 1.15rem;
+$font-18: 1.29rem;
+$font-20: 1.43rem;
+$font-22: 1.57rem;
+$font-24: 1.71rem;
+$font-26: 1.85rem;
+$font-28: 2rem;
+$font-30: 2.14rem;
+
+// font-weight
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+
+// global variables
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$grid-xs: map-get($grid-breakpoints, 'xs');
+$grid-sm: map-get($grid-breakpoints, 'sm');
+$grid-md: map-get($grid-breakpoints, 'md');
+$grid-lg: map-get($grid-breakpoints, 'lg');
+$grid-xl: map-get($grid-breakpoints, 'xl');
+
+// global variables
+$global-border-radius: 25px;
+$global-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.16);
+$global-box-shadow__hover: 0 5px 15px rgba(0, 0, 0, 0.3);
+$global-transition: 300ms;
+$input-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);

@@ -1,0 +1,76 @@
+@import 'bootstrap_variables';
+@import 'bootstrap_rtl';
+@import 'fonts';
+
+// ---------- edit some bootstrap classes for custom radio & chechbox input ------------
+
+.custom-radio {
+  .custom-control-label::before {
+    // stylelint-disable-next-line property-disallowed-list
+    border: $gray-3 solid 1px;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::before {
+      background-color: $secondary !important;
+      clip-path: url(#custom-pagination-mask-path);
+      border: none !important;
+    }
+
+    &::after {
+      background-image: none !important;
+    }
+  }
+}
+
+.custom-checkbox {
+  .custom-control-input {
+    &:checked ~ .custom-control-label::before {
+      box-shadow: none !important;
+      border: $gray-1 solid 1px !important;
+      background-color: $white !important;
+    }
+
+    &::after {
+      top: 0.5rem;
+    }
+
+    &:focus ~ .custom-control-label::before {
+      box-shadow: none !important;
+    }
+  }
+
+  .custom-control-label {
+    cursor: pointer;
+  }
+
+  .custom-control-label::before {
+    top: 0.5rem;
+  }
+  .custom-control-label::after {
+    top: 0.5rem;
+  }
+
+  .custom-control-input:indeterminate ~ .custom-control-label {
+    &::before {
+      border: $gray-1 solid 1px !important;
+      background-color: $white !important;
+    }
+    &::after {
+      top: 0.5rem;
+      background-image: escape-svg($custom-checkbox-indicator-icon-indeterminate);
+    }
+  }
+}
+
+.container,
+.container-fluid,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  @include sm-rule {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}

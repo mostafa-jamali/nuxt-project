@@ -1,0 +1,321 @@
+:root {
+  font-size: 14px;
+
+  @include md-rule {
+    font-size: 13px;
+  }
+}
+
+* {
+  font-family: IRANSans, Roboto, 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue',
+  Arial, sans-serif;
+  line-height: 2;
+}
+
+body {
+  color: $primary;
+
+  //TODO do something about position of scrollbars
+  * {
+    @include scrollbar;
+  }
+}
+
+//TODO slider btn and some other buttons in the project can be a unit component
+.slider-btn {
+  font-size: 1.2rem;
+}
+
+.rtl {
+  direction: rtl !important;
+}
+
+.ltr {
+  direction: ltr !important;
+}
+
+.text-gray-1 {
+  color: $gray-1 !important;
+}
+
+.text-gray-2 {
+  color: $gray-2 !important;
+}
+
+.text-gray-3 {
+  color: $gray-3 !important;
+}
+
+.text-disabled-color {
+  color: $gray-4 !important;
+}
+
+.text-gray-5 {
+  color: $gray-5 !important;
+}
+
+.text-verified {
+  color: $verified !important;
+}
+
+.bg-gray-1 {
+  background-color: $gray-1 !important;
+}
+
+.bg-gray-2 {
+  background-color: $gray-2 !important;
+}
+
+.bg-gray-3 {
+  background-color: $gray-3 !important;
+}
+
+.bg-disabled {
+  background-color: $gray-4 !important;
+}
+
+.bg-gray-5 {
+  background-color: $gray-5 !important;
+}
+
+.bg-verified {
+  background-color: $verified !important;
+}
+
+.global-section-wrapper {
+  margin-top: 80px;
+}
+
+// vue-transitions
+.slide-vertical-enter-active,
+.slide-vertical-leave-active {
+  transition: 0.5s;
+}
+
+.slide-vertical-enter,
+.slide-vertical-leave-to {
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+.slide-vertical-reverse-enter-active,
+.slide-vertical-reverse-leave-active {
+  transition: 0.5s;
+}
+
+.slide-vertical-reverse-enter,
+.slide-vertical-reverse-leave-to {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+.slide-horizontal-enter-active,
+.slide-horizontal-leave-active {
+  transition: 0.5s;
+}
+
+.slide-horizontal-enter,
+.slide-horizontal-leave-to {
+  opacity: 0;
+  transform: translateX(-5px);
+}
+
+.hljs {
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  direction: ltr !important;
+  text-align: left !important;
+  font-size: 1rem;
+
+  * {
+    font-family: Consolas, serif;
+  }
+
+  // default scrollbar
+  @include default-scrollbar();
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+//button-icons
+.button-icon {
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+//sokan academy buttons
+.sa-square-btn-left,
+.sa-square-btn-right {
+  display: flex !important;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  padding: 0 !important;
+  justify-content: center;
+}
+
+.sa-square-btn {
+  &-left {
+    clip-path: url(#sa-button-square-bg-left);
+  }
+
+  &-right {
+    clip-path: url(#sa-button-square-bg-right);
+  }
+}
+
+//nuxt links
+.nuxt-link {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  * {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.submit-form-button.disabled {
+  background-color: $gray-4 !important;
+  border-color: $gray-4 !important;
+  color: darken($gray-4, 30) !important;
+
+  * {
+    color: darken($gray-4, 30) !important;
+  }
+}
+
+.btn.disabled,
+.btn:disabled {
+  background-color: $gray-4 !important;
+  border-color: $gray-4 !important;
+  color: darken($gray-4, 30) !important;
+
+  * {
+    color: darken($gray-4, 30) !important;
+  }
+}
+
+// izitoast custom colors
+.iziToast {
+  border: none;
+  border-radius: 10px 10px 10px 15px;
+  box-shadow: $global-box-shadow;
+  padding: 12px 0 10px 16px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+  @include sm-rule {
+    max-width: 345px;
+    margin: 15px;
+  }
+
+  .iziToast-body {
+    margin: 0 !important;
+    padding: 0 20px 0 0 !important;
+    display: flex;
+    align-items: center;
+    min-height: 24px !important;
+    line-height: 1 !important;
+  }
+
+  .iziToast-texts {
+    margin: 0 20px 0 0 !important;
+
+    .iziToast-title {
+      line-height: 1.5 !important;
+    }
+  }
+
+  .iziToast-icon {
+    font-size: $font-12 !important;
+    color: $white !important;
+    top: calc(50% - 2px) !important;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    line-height: 1 !important;
+  }
+
+  &::after {
+    box-shadow: none;
+  }
+}
+
+
+// custom modal styles
+.modal-msg-box-confirm {
+  .content-msg-box-confirm {
+    border: none;
+    box-shadow: $global-box-shadow;
+    border-radius: 15px 25px 15px 15px;
+
+    .header-msg-box-confirm {
+      border-radius: 15px 25px 0 0;
+      border-bottom: none;
+      padding: 10px 0;
+      background-color: $gray-1;
+
+      .close {
+        font-size: 2rem;
+        color: $primary;
+        opacity: 1;
+        position: absolute;
+        right: 25px;
+        font-weight: 300;
+      }
+
+      .title-msg-box-confirm {
+        margin-right: 45%;
+        font-weight: 700;
+      }
+    }
+
+    .body-msg-box-confirm {
+      padding: 24px;
+      font-size: 1.2rem;
+    }
+
+    .footer-msg-box-confirm {
+      border-top: none;
+
+      .btn-secondary {
+        width: 80px;
+      }
+
+    }
+  }
+}
+
+button {
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.5 !important;
+}
+
+//custom animations
+@keyframes intro-sliding-fade {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

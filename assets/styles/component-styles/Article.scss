@@ -1,0 +1,261 @@
+// sa-article components styles
+.sa-article {
+  color: $primary;
+
+  .sa-article-img-card {
+    flex-direction: row;
+    border: none;
+    width: 100%;
+    padding: 10px 10px 10px 15px;
+    border-radius: 15px;
+    position: relative !important;
+    @include gradient-overlay(180deg, $gray-1, 0%, rgba(255, 255, 255, 0), 100%);
+
+    @include only-mobile-rule {
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .sa-article-img-card-title {
+      font-size: $font-24;
+      font-weight: $font-weight-bold;
+      margin-bottom: 0;
+      margin-top: 10px;
+      @include line-clamp(2);
+
+      @include only-mobile-rule {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        @include line-clamp(3);
+      }
+    }
+
+    .sa-article-img {
+      width: 194px;
+      min-width: 194px;
+      height: 124px;
+      border-radius: 25px 15px 15px 15px;
+      object-fit: cover;
+      overflow: hidden;
+
+      @include only-mobile-rule {
+        width: 100%;
+        height: 194px;
+      }
+    }
+
+    .sa-article-score-wrapper {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .sa-article-score-small-screen {
+        display: none;
+
+        @include only-mobile-rule {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 8px 12px;
+          width: fit-content;
+          background-color: $white;
+          border-radius: 10px 10px 0 0;
+          border: 1px solid $gray-1;
+        }
+      }
+    }
+  }
+
+  .sa-article-meta {
+    display: flex;
+    align-items: center;
+    color: $gray-5 !important;
+    font-size: $font-12;
+    margin-bottom: 10px;
+
+    // When we link a meta
+    a {
+      color: $gray-5 !important;
+      text-decoration: none !important;
+
+      &:hover, &:focus {
+        color: $primary !important;
+      }
+    }
+
+    .sa-article-meta-icon {
+      font-size: $font-20;
+      margin-left: 6px;
+    }
+  }
+
+  .article-tags-wrapper {
+    margin-top: 40px;
+    @include sm-rule {
+      margin-top: 0;
+    }
+  }
+
+  .article-actionbar {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 60px;
+    @include sm-rule {
+      margin-top: 20px;
+    }
+  }
+
+  .article-share-link {
+    font-size: 2.18rem;
+    line-height: 0;
+    margin: 0 5px;
+
+    i {
+      transition: color $global-transition;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      i {
+        color: $secondary;
+      }
+    }
+  }
+
+  .article-sidebar-wrapper {
+    position: relative;
+    z-index: 5;
+
+    @include only-mobile-rule {
+      position: fixed;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      padding: 0;
+      z-index: 11;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: sticky;
+      top: 132px;
+    }
+  }
+
+  .copy-link-input {
+    opacity: 0;
+    position: fixed;
+    user-select: none;
+    pointer-events: none;
+    transform: translate(100%, 100%);
+  }
+
+  .change-section-btn {
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: $global-transition;
+  }
+}
+
+.sa-article-glossary-popup-text-wrapper {
+  background-color: $gray-1;
+  border-radius: 15px 15px 15px 25px;
+  min-width: 150px;
+}
+
+// custom content styles
+.sa-article .article-content {
+  margin-top: 20px;
+  color: $primary;
+  font-size: $font-16;
+  line-height: 2.4;
+
+  ::selection {
+    background-color: $secondary;
+    color: $primary;
+  }
+
+  * {
+    word-break: break-word;
+    line-height: 2.4;
+  }
+
+  h2,
+  h2 * {
+    font-size: $font-24;
+  }
+
+  h3,
+  h3 * {
+    font-size: $font-20;
+  }
+
+  h4,
+  h4 * {
+    font-size: $font-18;
+  }
+
+  code,
+  code * {
+    line-height: 2;
+  }
+
+  a {
+    color: $verified !important;
+    text-decoration: underline;
+    position: relative;
+    transition: all 100ms ease-in-out;
+
+    // its for link hover style
+    background-image: linear-gradient(to top, $secondary 0, $secondary 4px, transparent 4px, transparent 100%);
+    background-position: 0 -4px;
+
+    &:hover {
+      font-weight: $font-weight-bold;
+      background-image: linear-gradient(to top, $secondary 0, $secondary 10px, transparent 10px, transparent 100%);
+    }
+  }
+
+  img,
+  * img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  figcaption {
+    text-align: center;
+    margin-top: 1rem;
+    color: $gray-4;
+    font-size: 1rem;
+  }
+
+  video {
+    width: 100%;
+  }
+
+  table,
+  * table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  blockquote,
+  * blockquote {
+    border-right: 3px solid $gray-4;
+    border-radius: 3px;
+    font-size: $font-14;
+    color: $gray-4;
+    font-style: italic;
+    padding-right: 15px;
+    margin-right: 25px;
+  }
+}

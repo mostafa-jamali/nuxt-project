@@ -1,0 +1,125 @@
+// BaseButton components styles
+.base-button {
+  min-width: 100px;
+  height: 40px;
+  padding: 0 16px !important;
+  border-radius: 10px 10px 10px 15px !important;
+  border: 1px solid $secondary !important;
+  display: flex;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-16 !important;
+  font-weight: $font-weight-bold;
+
+  // sizes
+  &.medium-btn {
+    padding: 0 12px !important;
+    min-width: 70px;
+    height: 37px;
+    font-size: $font-14 !important;
+  }
+
+  &.small-btn {
+    padding: 0 10px !important;
+    min-width: 64px;
+    height: 30px;
+    font-size: $font-12 !important;
+    // TODO: add demibold font weight
+  }
+
+  // secondary (level 1)
+  &.secondary {
+    background-color: $secondary !important;
+    color: $primary;
+
+    &:hover {
+      background-color: $secondary-darker !important;
+      font-weight: $font-weight-bold !important;
+      box-shadow: 0 5px 10px rgba(142, 105, 2, 0.18) !important;
+    }
+
+    &:focus, &:active {
+      box-shadow: 0 10px 15px rgba(142, 105, 2, 0.26) !important;
+    }
+
+    &.btn:disabled {
+      background-color: $gray-4 !important;
+      color: $white !important;
+    }
+
+    &.loading {
+      box-shadow: 0 10px 15px rgba(142, 105, 2, 0.26) !important;
+      pointer-events: none !important;
+      color: $white !important;
+    }
+  }
+
+  // secondary-outlined (level 2)
+  &.secondary-outline {
+    background-color: $white;
+    color: $secondary;
+
+    &:hover {
+      background-color: $secondary !important;
+      color: $primary !important;
+      font-weight: $font-weight-bold !important;
+      box-shadow: 0 5px 10px rgba(142, 105, 2, 0.18) !important;
+    }
+
+    &:focus, &:active {
+      background-color: $white;
+      font-weight: $font-weight-bold;
+      box-shadow: 0 0 0 5px rgba(252, 191, 23, 0.18) !important;
+      filter: drop-shadow(0 10px 15px rgba(142, 105, 2, 0.26)) !important;
+    }
+
+    &:disabled {
+      font-weight: normal;
+      background-color: $white !important;
+      border-color: $gray-4;
+      color: $gray-4;
+      box-shadow: none;
+      fill: none;
+    }
+
+    &.loading {
+      box-shadow: 0 10px 15px rgba(142, 105, 2, 0.26) !important;
+      pointer-events: none !important;
+    }
+  }
+
+  // transparent (level 3)
+  &.transparent {
+    background-color: transparent;
+    border-color: transparent !important;
+
+    &:hover {
+      background-color: $gray-1 !important;
+      border-color: transparent !important;
+      font-weight: $font-weight-bold !important;
+    }
+
+    &:focus, &:active {
+      background-color: $gray-1 !important;
+      border-color: transparent !important;
+      font-weight: $font-weight-bold !important;
+      box-shadow: 0 0 0 5px rgba(219, 219, 219, 0.18) !important;
+    }
+
+    &:disabled {
+      color: $gray-4 !important;
+    }
+
+    &.loading {
+      background-color: $gray-1 !important;
+    }
+  }
+
+  // spinner
+  .spinner-border-sm {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
