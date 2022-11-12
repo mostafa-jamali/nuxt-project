@@ -13,3 +13,8 @@ export default {
   name: 'IndexPage',
 };
 </script>
+<style lang="scss">
+main {
+  min-height: 1000px;
+}
+</style>
