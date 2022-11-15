@@ -28,6 +28,7 @@
           <b-nav-item-dropdown left class="mr-5">
             <!-- Using 'button-content' slot -->
             <template #button-content>
+              <b-avatar size="2rem" variant="dark" class="mx-2"></b-avatar>
               <em>کاربر</em>
             </template>
             <b-dropdown-item href="/">پروفایل</b-dropdown-item>
@@ -60,6 +61,7 @@
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
               <template #button-content>
+                <b-avatar size="2rem" variant="dark" class="mx-2"></b-avatar>
                 <em>کاربر</em>
               </template>
               <b-dropdown-item href="/">پروفایل</b-dropdown-item>

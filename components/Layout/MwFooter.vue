@@ -34,10 +34,10 @@
         </b-col>
       </b-row>
       <div class="text-center mt-5">
-        <b-icon icon="instagram" font-scale="2" class="instagram mx-1"></b-icon>
-        <b-icon icon="linkedin" font-scale="2" class="linkedin mx-1"></b-icon>
-        <b-icon icon="github" font-scale="2" class="github mx-1"></b-icon>
-        <b-icon icon="telegram" font-scale="2" class="telegram mx-1"></b-icon>
+        <b-icon icon="twitter" font-scale="2" class="mx-1"></b-icon>
+        <b-icon icon="instagram" font-scale="2" class="mx-1"></b-icon>
+        <b-icon icon="linkedin" font-scale="2" class="mx-1"></b-icon>
+        <b-icon icon="telegram" font-scale="2" class="mx-1"></b-icon>
       </div>
     </b-container>
   </div>
