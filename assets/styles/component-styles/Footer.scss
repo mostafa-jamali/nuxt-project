@@ -1,5 +1,17 @@
 .mw-footer {
   z-index: 1000;
-  height: 100px;
-  box-shadow: 0px -3px 10px #aaa8ea;
+  box-shadow: 0px -3px 10px $primary;
+
+  .instagram:hover{
+    color: #F14E4B;
+  }
+  .linkedin:hover{
+    color: #0072b1;
+  }
+  .github:hover{
+    color: #171515;
+  }
+  .telegram:hover{
+    color: #0088cc;
+  }
 }

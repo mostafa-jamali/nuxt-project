@@ -9,7 +9,11 @@
 
         <b-navbar-nav>
           <b-nav-item href="/">خانه</b-nav-item>
-          <b-nav-item href="/" class="mr-4">آموزش‌ها</b-nav-item>
+          <b-nav-item href="/" class="mr-4">مقالات</b-nav-item>
+          <b-nav-item href="/" class="mr-4">دوره‌ها</b-nav-item>
+          <b-nav-item href="/" class="mr-4">همکاری با ما</b-nav-item>
+          <b-nav-item href="/" class="mr-4">درباره ما</b-nav-item>
+          <b-nav-item href="/" class="mr-4">تماس با ما</b-nav-item>
         </b-navbar-nav>
 
         <!-- Left aligned nav items -->
