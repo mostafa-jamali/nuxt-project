@@ -1,5 +1,7 @@
 # nuxt-project
 
+![MW-logo](https://user-images.githubusercontent.com/61268358/202135687-ca20b972-281c-42f6-afe9-1eb99050ec38.PNG)
+
 ## Build Setup
 
 ```bash
