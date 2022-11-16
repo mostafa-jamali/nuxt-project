@@ -19,16 +19,14 @@
         <!-- Left aligned nav items -->
         <b-navbar-nav class="mr-auto">
           <b-nav-form>
-            <b-form-input size="sm" class="ml-sm-2" placeholder="Search"></b-form-input>
-            <b-button size="sm" class="my-2 my-sm-0" type="submit">
-              <b-icon icon="search"></b-icon>
-            </b-button>
+            <b-form-input size="sm" class="input-search pl-5" placeholder="جستجو"></b-form-input>
+            <b-icon icon="search" class="icon-search"></b-icon>
           </b-nav-form>
 
           <b-nav-item-dropdown left class="mr-5">
             <!-- Using 'button-content' slot -->
             <template #button-content>
-              <b-avatar size="2rem" variant="secondary" class="mx-2"></b-avatar>
+              <b-avatar size="1.5rem" variant="secondary" class="mx-2"></b-avatar>
               <em>کاربر</em>
             </template>
             <b-dropdown-item href="/">پروفایل</b-dropdown-item>
@@ -61,17 +59,16 @@
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
               <template #button-content>
-                <b-avatar size="2rem" variant="dark" class="mx-2"></b-avatar>
+                <b-avatar size="2rem" variant="dark" class="ml-2 my-2"></b-avatar>
                 <em>کاربر</em>
               </template>
               <b-dropdown-item href="/">پروفایل</b-dropdown-item>
               <b-dropdown-item href="/">خروج</b-dropdown-item>
             </b-nav-item-dropdown>
+
             <b-nav-form>
-              <b-form-input size="sm" class="ml-sm-2" placeholder="Search"></b-form-input>
-              <b-button size="sm" class="my-2 my-sm-0" type="submit">
-                <b-icon icon="search"></b-icon>
-              </b-button>
+              <b-form-input size="sm" class="input-search pl-5" placeholder="جستجو"></b-form-input>
+              <b-icon icon="search" class="icon-search"></b-icon>
             </b-nav-form>
           </b-navbar-nav>
         </b-collapse>

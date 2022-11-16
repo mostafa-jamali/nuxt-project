@@ -71,4 +71,4 @@ export default {
   },
 };
 </script>
-<style lang="scss" src="~/assets/styles/component-styles/index.scss"></style>
+<style lang="scss" src="~/assets/styles/component-styles/landing.scss"></style>
