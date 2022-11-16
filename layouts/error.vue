@@ -1,7 +1,7 @@
 <template>
   <b-container class="d-flex flex-column justify-content-center align-items-center">
     <h1 v-if="error.statusCode === 404">صفحه موردنظر یافت نشد !</h1>
-    <h1 v-else>مشکلی. پیش آمده است</h1>
+    <h1 v-else>مشکلی پیش آمده است</h1>
     <div dir="ltr" >
       صفحه موردنظر :
       <span>
