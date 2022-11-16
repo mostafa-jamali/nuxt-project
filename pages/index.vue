@@ -2,7 +2,7 @@
   <b-container class="mw-main">
     <div v-if="pending">
       <b-row>
-        <b-col cols="12" md="6" v-for="i in 8">
+        <b-col cols="12" md="6" v-for="i in 8" :key="i">
           <div class="p-3 my-3">
             <b-skeleton animation="fade" width="100%" height="120px"></b-skeleton>
           </div>
@@ -14,7 +14,7 @@
       <!-- <h3 class="mt-3">کاربران</h3> -->
       <b-row>
         <b-col cols="12" md="6" v-for="(user, index) in users" :key="index">
-          <b-link :href="`/users/${user.id}`" class="card-link">
+          <NuxtLink :to="`/users/${user.id}`" class="card-link">
             <b-card class="user-card my-3">
               <div>
                 <b-avatar size="2rem" variant="secondary">
@@ -42,7 +42,7 @@
                 </span>
               </div>
             </b-card>
-          </b-link>
+          </NuxtLink>
         </b-col>
       </b-row>
     </div>
