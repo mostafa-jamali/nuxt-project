@@ -2,20 +2,20 @@
   <div class="sign-up">
     <div class="mt-10">
       <form>
-        <h3>Sign Up</h3>
+        <h3>ثبت نام</h3>
         <div class="form-group">
-          <label>Full Name</label>
+          <label>نام</label>
           <input type="text" class="form-control form-control-lg" />
         </div>
         <div class="form-group">
-          <label>Email address</label>
+          <label>ایمیل</label>
           <input type="email" class="form-control form-control-lg" />
         </div>
         <div class="form-group">
-          <label>Password</label>
+          <label>رمز عبور</label>
           <input type="password" class="form-control form-control-lg" />
         </div>
-        <button type="submit" class="btn btn-dark btn-lg btn-block">Sign Up</button>
+        <b-button type="submit" class="btn-lg btn-block" variant="primary">ثبت نام</b-button>
       </form>
     </div>
   </div>

@@ -2,12 +2,12 @@
   <div class="forget-password">
     <div class="mt-10">
       <form>
-        <h3>Forgot Password</h3>
+        <h3>فراموشی رمز عبور</h3>
         <div class="form-group">
-          <label>Email address</label>
-          <input type="email" class="form-control form-control-lg" />
+          <label>آدرس ایمیل</label>
+          <b-input type="email" class="form-control form-control-lg" placeholder="لطفا ایمیل خود را وارد کنید" />
         </div>
-        <button type="submit" class="btn btn-dark btn-lg btn-block">Reset password</button>
+        <b-button type="submit" class="btn-lg btn-block" variant="primary">بازیابی رمز عبور</b-button>
       </form>
     </div>
   </div>
