@@ -1,5 +1,5 @@
 <template>
-  <b-col>
+  <b-col sm="12" md="6">
     <div v-if="$fetchState.pending">
       <div cols="12" md="6" v-for="i in 5" :key="i">
         <div class="p-3 my-2">
@@ -19,15 +19,14 @@
         ایمیل: <b>{{ userInfo.email }}</b>
       </div>
       <div class="mb-2">
-        تلفن: <b>{{ userInfo.phone }}</b>
+        تلفن: <b dir="ltr">{{ userInfo.phone }}</b>
       </div>
       <div class="mb-2">
         نام شرکت: <b>{{ userInfo.company.name }}</b>
       </div>
       <address class="mt-3">
         <i>آدرس</i> <br />
-        شهر: {{ userInfo.address.city }}
-        خیابان: {{ userInfo.address.street }}
+        شهر: {{ userInfo.address.city }} خیابان: {{ userInfo.address.street }}
       </address>
     </div>
   </b-col>
@@ -40,7 +39,17 @@ export default {
       userInfo: {},
     };
   },
+  created() {
+    console.log('CREATED:', this.$nuxt.$route.params.userId);
+  },
+  beforeMount() {
+    console.log('BEFOREMOUNT:', this.$nuxt.$route.params.userId);
+  },
+  mounted() {
+    console.log('MOUNTED:', this.$nuxt.$route.params.userId);
+  },
   async fetch() {
+    console.log('FETCH:', this.$nuxt.$route.params.userId);
     const userId = this.$nuxt.$route.params.userId;
     this.userInfo = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`).then(res => res.json());
   },

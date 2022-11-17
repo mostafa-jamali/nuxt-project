@@ -2,7 +2,7 @@
   <b-container class="user-page">
     <b-row>
       <user-information />
-      <b-col>map</b-col>
+      <user-location />
     </b-row>
   </b-container>
 </template>
