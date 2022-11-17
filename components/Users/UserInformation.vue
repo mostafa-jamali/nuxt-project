@@ -39,17 +39,7 @@ export default {
       userInfo: {},
     };
   },
-  created() {
-    console.log('CREATED:', this.$nuxt.$route.params.userId);
-  },
-  beforeMount() {
-    console.log('BEFOREMOUNT:', this.$nuxt.$route.params.userId);
-  },
-  mounted() {
-    console.log('MOUNTED:', this.$nuxt.$route.params.userId);
-  },
   async fetch() {
-    console.log('FETCH:', this.$nuxt.$route.params.userId);
     const userId = this.$nuxt.$route.params.userId;
     this.userInfo = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`).then(res => res.json());
   },
