@@ -1,10 +1,13 @@
 <template>
-  <div>
-    this is user page
-  </div>
+  <b-container class="user-page">
+    <b-row>
+      <user-information />
+      <b-col>map</b-col>
+    </b-row>
+  </b-container>
 </template>
 <script>
 export default {
-  name: 'userPage'
-}
+  name: 'userPage',
+};
 </script>

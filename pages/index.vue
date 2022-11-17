@@ -4,12 +4,12 @@
       <b-row>
         <b-col cols="12" md="6" v-for="i in 8" :key="i">
           <div class="p-3 my-3">
-            <b-skeleton animation="fade" width="100%" height="120px"></b-skeleton>
+            <b-skeleton animation="wave" width="100%" height="120px"></b-skeleton>
           </div>
         </b-col>
       </b-row>
     </div>
-    <div v-else-if="error" class="my-5"><b>در دریافت اطلاعات خطایی رخ داده است.</b></div>
+    <div v-else-if="error"><b>در دریافت اطلاعات خطایی رخ داده است.</b></div>
     <div v-else class="mb-5">
       <!-- <h3 class="mt-3">کاربران</h3> -->
       <b-row>
