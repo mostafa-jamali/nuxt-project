@@ -54,6 +54,9 @@ import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'IndexPage',
+  // mounted() {
+  //   console.log('loggedIn :',this.$auth.loggedIn);
+  // },
   computed: {
     ...mapState({
       users: state => state.users.usersList,

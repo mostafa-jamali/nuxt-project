@@ -31,7 +31,7 @@
                 <em>کاربر</em>
               </template>
               <b-dropdown-item href="/">پروفایل</b-dropdown-item>
-              <b-dropdown-item href="/">خروج</b-dropdown-item>
+              <b-dropdown-item @click="logOutUser">خروج</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-container>
@@ -64,7 +64,7 @@
                   <em>کاربر</em>
                 </template>
                 <b-dropdown-item href="/">پروفایل</b-dropdown-item>
-                <b-dropdown-item href="/">خروج</b-dropdown-item>
+                <b-dropdown-item @click="logOutUser">خروج</b-dropdown-item>
               </b-nav-item-dropdown>
 
               <b-nav-form>
@@ -82,6 +82,12 @@
 <script>
 export default {
   name: 'MwHeader',
+  methods: {
+    async logOutUser() {
+      await this.$auth.logout();
+      this.$router.push({ path: '/auth/login' });
+    },
+  },
 };
 </script>
 <style lang="scss" src="~/assets/styles/component-styles/Header.scss"></style>

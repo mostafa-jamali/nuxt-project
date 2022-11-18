@@ -18,7 +18,7 @@ export default {
   css: ['~/assets/styles/index.scss', 'leaflet/dist/leaflet.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/createJWT.js' }, { src: '~/plugins/parseJWT.js' }],
+  plugins: [{ src: '~/plugins/createJWT.js' }, { src: '~/plugins/parseJWT.js' }, { src: '~/plugins/validationForm.js' }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: [
@@ -38,7 +38,11 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    // https://auth.nuxtjs.org/
+    '@nuxtjs/auth-next',
+    // https://www.npmjs.com/package/nuxt-leaflet
     'nuxt-leaflet',
   ],
 
@@ -54,5 +58,34 @@ export default {
   // customize bootstrapVue module
   bootstrapVue: {
     icons: true,
+  },
+
+  // auth
+  router: {
+    middleware: ['auth'],
+  },
+
+  auth: {
+    strategies: {
+      email: {
+        scheme: 'local',
+        user: {
+          autoFetch: true,
+          property: false,
+        },
+        endpoints: {
+          user: { url: '/api/auth/user', method: 'get' },
+          logout: { url: '/api/auth/logout', method: 'post' },
+          login: { url: '/api/auth/login', method: 'post' },
+        },
+        token: {
+          property: 'token',
+          global: true,
+          // maxAge: 5 * 60,
+          // required: true,
+          // type: 'Bearer'
+        },
+      },
+    },
   },
 };
