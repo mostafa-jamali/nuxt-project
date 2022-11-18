@@ -18,7 +18,7 @@ export default {
   css: ['~/assets/styles/index.scss', 'leaflet/dist/leaflet.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '~/plugins/createJWT.js' }, { src: '~/plugins/parseJWT.js' }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: [

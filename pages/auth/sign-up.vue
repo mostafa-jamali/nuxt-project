@@ -50,20 +50,37 @@ export default {
   },
   methods: {
     signUp() {
-      if (this.form.name && this.form.email && this.form.password) {
-        return true;
+      const englishChar = /^[a-zA-Z]+$/;
+
+      if (
+        this.form.name &&
+        englishChar.test(this.form.name) &&
+        this.form.email &&
+        this.form.password &&
+        englishChar.test(this.form.password)
+      ) {
+        const jwt = this.$createJWT(this.form);
+        localStorage.setItem('token', jwt);
+
+        this.$router.push({ path: '/' });
       }
 
       this.errors = [];
 
       if (!this.form.name) {
         this.errors.push('نام نمی تواند خالی باشد.');
+      } else if (!englishChar.test(this.form.name)) {
+        this.errors.push('نام:  تنها مجاز به استفاده از حروف لاتین هستید.');
       }
+
       if (!this.form.email) {
         this.errors.push('ایمیل نمی تواند خالی باشد.');
       }
+
       if (!this.form.password) {
         this.errors.push('رمز عبور نمی تواند خالی باشد.');
+      } else if (!englishChar.test(this.form.password)) {
+        this.errors.push('رمز عبور:  تنها مجاز به استفاده از حروف لاتین هستید.');
       }
     },
   },
